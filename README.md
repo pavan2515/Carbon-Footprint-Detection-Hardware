@@ -5,9 +5,7 @@
 
 ![Image](https://blog.asksensors.com/wp-content/uploads/2020/03/Air-quality-esp32-mqtt-iot-platform-co2-1024x512.png)
 
-![Image](https://figures.semanticscholar.org/d0919644308c93a2278de87b307eaa15472aaa25/2-Figure1-1.png)
 
-![Image](https://www.researchgate.net/publication/333221224/figure/fig2/AS%3A760650972278790%401558364732898/Experimental-setup-of-Automatic-vehicle-speed-control-system.jpg)
 
 ![Image](https://www.mdpi.com/applsci/applsci-14-05774/article_deploy/html/images/applsci-14-05774-g001.png)
 
