@@ -5,11 +5,6 @@
 
 ![Image](https://blog.asksensors.com/wp-content/uploads/2020/03/Air-quality-esp32-mqtt-iot-platform-co2-1024x512.png)
 
-
-
-![Image](https://www.mdpi.com/applsci/applsci-14-05774/article_deploy/html/images/applsci-14-05774-g001.png)
-
-```markdown
 # 🌍 Carbon Footprint Detection and Speed Control System
 
 An intelligent embedded system that detects vehicle exhaust emissions in real time using gas sensors and machine learning, and automatically controls vehicle speed to reduce environmental pollution.
