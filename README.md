@@ -104,6 +104,108 @@ Dashboard / Cloud (Optional)
 - Power Supply
 
 ---
+⚙️ How the System Works (Based on Code)
+1️⃣ Proximity Detection (Ultrasonic)
+
+Ultrasonic sensor checks distance continuously
+
+Only when distance ≤ 5 cm, pollution data is published
+
+if (distance <= 5.0 && distance > 0)
+
+
+This avoids false readings and saves bandwidth.
+
+2️⃣ Gas Sensing
+
+Three MQ gas sensors connected to ESP32 ADC pins
+
+Sensors detect gases like:
+
+CO
+
+CO₂
+
+Hydrocarbons
+
+Analog values read using:
+
+analogRead(SENSOR1);
+analogRead(SENSOR2);
+analogRead(SENSOR3);
+
+3️⃣ MQTT Data Transmission
+
+Data published to broker.emqx.io
+
+Topic: carcontrol
+
+Format:
+
+sensor1_value,sensor2_value,sensor3_value
+
+carcontrol.publish(data.c_str());
+
+4️⃣ Backend & ML (Future / Optional)
+
+MQTT subscriber receives data
+
+ML model classifies pollution level:
+
+Low
+
+Moderate
+
+High
+
+Control decisions triggered (speed reduction / alert)
+
+🌐 Communication Architecture
+Ultrasonic Sensor
+        ↓
+ MQ Gas Sensors
+        ↓
+      ESP32
+        ↓
+      MQTT
+        ↓
+ Backend / ML
+        ↓
+ Speed Control + Alerts
+
+🧰 Hardware Components
+
+ESP32
+
+Ultrasonic Sensor (HC-SR04)
+
+MQ Gas Sensors (MQ-2 / MQ-7 / MQ-135)
+
+Motor Driver / Relay (optional)
+
+Buzzer / LED (optional)
+
+Power Supply
+
+-----------
+
+🔌 Hardware Pin Diagram (Based on Code)
+🧠 ESP32 Pin Connections
+Component	Pin Name	ESP32 GPIO
+Ultrasonic Trigger	TRIG	GPIO 5
+Ultrasonic Echo	ECHO	GPIO 18
+MQ Sensor 1	Analog Out	GPIO 34
+MQ Sensor 2	Analog Out	GPIO 35
+MQ Sensor 3	Analog Out	GPIO 32
+MQ Sensors VCC	Power	5V / 3.3V
+All Grounds	GND	GND
+
+-----
+#define TRIG_PIN 5
+#define ECHO_PIN 18
+#define SENSOR1 34
+#define SENSOR2 35
+#define SENSOR3 32
 
 ## 💻 Software & Technologies
 
